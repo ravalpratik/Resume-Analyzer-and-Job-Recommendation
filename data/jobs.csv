@@ -1,0 +1,6 @@
+title,description,skills
+Data Scientist,"Work on data analysis, model building, feature engineering.","python, machine learning, statistics, pandas, numpy"
+Machine Learning Engineer,"Deploy ML models, build pipelines, work with TensorFlow/PyTorch.","python, machine learning, tensorflow, pytorch, docker"
+Web Developer,"Build and maintain web applications, REST APIs, frontend work.","javascript, html, css, react, nodejs"
+QA Engineer,"Testing, automation, writing test cases, selenium.","testing, selenium, automation, python"
+Business Analyst,"Requirement gathering, stakeholder communication, data analysis.","sql, excel, communication, analytics"

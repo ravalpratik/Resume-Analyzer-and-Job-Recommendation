@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Analysis Result</h1>
+      <p><strong>Resume Score:</strong> {{ result.resume_score }}%</p>
+      <h2>Skills Found</h2>
+      <ul>
+        {% for s in result.skills_found %}
+        <li>{{ s }}</li>
+        {% endfor %}
+      </ul>
+
+      <h2>Top Predicted Jobs</h2>
+      <ul>
+        {% for p in result.predicted_jobs %}
+        <li>{{ p.job }} — {{ '%.2f'|format(p.score) }}</li>
+        {% endfor %}
+      </ul>
+
+      <h2>Skill-based Matching</h2>
+      <ul>
+        {% for m in result.matched_jobs %}
+        <li>{{ m.job }} — match {{ '%.2f'|format(m.score) }} — requires: {{ m.required_skills }}</li>
+        {% endfor %}
+      </ul>
+
+      <h2>Missing Skills (Top Match)</h2>
+      <ul>
+        {% for ms in result.missing_skills %}
+        <li>{{ ms }}</li>
+        {% endfor %}
+      </ul>
+
+      <a href="/">Upload another resume</a>
+    </div>
+  </body>
+</html>

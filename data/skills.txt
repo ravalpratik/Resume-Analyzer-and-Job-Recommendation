@@ -1,0 +1,23 @@
+python
+machine learning
+statistics
+pandas
+numpy
+tensorflow
+pytorch
+docker
+javascript
+html
+css
+react
+nodejs
+testing
+selenium
+automation
+sql
+excel
+communication
+analytics
+feature engineering
+modeling
+deep learning

@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+	--bg: #f4f7fb;
+	--card: #ffffff;
+	--accent: #2563eb;
+	--muted: #6b7280;
+	--success: #10b981;
+}
+
+* {
+	box-sizing: border-box
+}
+
+body {
+	font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+	background: linear-gradient(180deg, #f6f9ff 0%, var(--bg) 100%);
+	color: #0f172a;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+.container {
+	max-width: 900px;
+	margin: 48px auto;
+	background: var(--card);
+	padding: 28px;
+	border-radius: 12px;
+	box-shadow: 0 6px 30px rgba(16, 24, 40, 0.08);
+}
+
+h1 {
+	margin: 0 0 8px 0;
+	font-size: 28px;
+}
+
+p.lead {
+	color: var(--muted);
+	margin-top: 0
+}
+
+form {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	flex-wrap: wrap
+}
+
+.file-input {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+input[type=file] {
+	border: 1px dashed #e6eefc;
+	padding: 14px;
+	border-radius: 8px;
+	background: linear-gradient(180deg, #fff, #fbfdff);
+	cursor: pointer;
+}
+
+button {
+	background: var(--accent);
+	color: white;
+	border: none;
+	padding: 10px 18px;
+	border-radius: 10px;
+	font-weight: 600;
+	box-shadow: 0 6px 18px rgba(37, 99, 235, 0.12);
+	cursor: pointer;
+}
+
+button:hover {
+	transform: translateY(-1px)
+}
+
+.meta {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	margin-top: 18px
+}
+
+.muted {
+	color: var(--muted);
+	font-size: 14px
+}
+
+/* Results */
+.card {
+	background: linear-gradient(180deg, #ffffff, #fbfdff);
+	padding: 18px;
+	border-radius: 10px;
+	box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+	margin-bottom: 16px
+}
+
+.score-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 12px;
+	border-radius: 999px;
+	background: rgba(16, 185, 129, 0.08);
+	color: var(--success);
+	font-weight: 700
+}
+
+.skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 8px 0
+}
+
+.skill {
+	background: #eef2ff;
+	color: #3730a3;
+	padding: 6px 10px;
+	border-radius: 999px;
+	font-size: 13px
+}
+
+.jobs-list li {
+	margin-bottom: 8px
+}
+
+.muted-small {
+	color: var(--muted);
+	font-size: 13px
+}
+
+/* Progress bar for resume score */
+.progress {
+	width: 100%;
+	background: #eef2f6;
+	height: 12px;
+	border-radius: 999px;
+	overflow: hidden
+}
+
+.progress>i {
+	display: block;
+	height: 100%;
+	background: linear-gradient(90deg, var(--accent), #7c3aed);
+}
+
+@media (max-width:640px) {
+	.container {
+		margin: 20px;
+		padding: 18px
+	}
+
+	h1 {
+		font-size: 20px
+	}
+
+	form {
+		flex-direction: column;
+		align-items: stretch
+	}
+}
