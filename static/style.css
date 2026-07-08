@@ -313,4 +313,7 @@ footer hr {
 		flex-direction: column;
 		gap: 24px;
 	}
+	button{
+		width: 62vw;
+	}
 }
