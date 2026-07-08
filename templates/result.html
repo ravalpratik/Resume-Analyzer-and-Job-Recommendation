@@ -1,84 +1,99 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Analysis Result</title>
+    <link rel="icon" type="image/png" href="/static/favicon.png">
     <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
-    <div class="container">
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="17" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+          <span>Smart Resume Analyzer</span>
+        </a>
+      </div>
+    </nav>
+    <div class="container main-content">
       <h1>Analysis Result</h1>
-      <p><strong>Resume Score:</strong> {{ result.resume_score }}%</p>
+      
+      <div class="card">
+        <div class="score-badge">
+          <span>Resume Score:</span>
+          <strong>{{ result.resume_score }}%</strong>
+        </div>
+        <div class="progress" style="margin-top: 12px;">
+          <i style="width: {{ result.resume_score }}%; "></i>
+        </div>
+      </div>
+
       <h2>Skills Found</h2>
-      <ul>
+      <div class="skills-list">
         {% for s in result.skills_found %}
-        <li>{{ s }}</li>
+        <span class="skill">{{ s }}</span>
         {% endfor %}
-      </ul>
+      </div>
 
       <h2>Top Predicted Jobs</h2>
-      <ul>
+      <ul class="jobs-list">
         {% for p in result.predicted_jobs %}
-        <li>{{ p.job }} — {{ '%.2f'|format(p.score) }}</li>
+        <li><strong>{{ p.job }}</strong> — <span class="muted-small">Match: {{ '%.2f'|format(p.score) }}</span></li>
         {% endfor %}
       </ul>
 
       <h2>Skill-based Matching</h2>
-      <ul>
+      <ul class="jobs-list">
         {% for m in result.matched_jobs %}
-        <li>{{ m.job }} — match {{ '%.2f'|format(m.score) }} — requires: {{ m.required_skills }}</li>
+        <li>
+          <strong>{{ m.job }}</strong> — <span class="muted-small">Match: {{ '%.2f'|format(m.score) }}</span>
+          <div class="muted-small" style="margin-top: 4px;">Requires: {{ m.required_skills }}</div>
+        </li>
         {% endfor %}
       </ul>
 
       <h2>Missing Skills (Top Match)</h2>
-      <ul>
+      <div class="skills-list">
         {% for ms in result.missing_skills %}
-        <li>{{ ms }}</li>
+        <span class="skill" style="background: #fee2e2; color: #991b1b;">{{ ms }}</span>
         {% endfor %}
-      </ul>
+      </div>
 
-      <a href="/">Upload another resume</a>
+      <div style="margin-top: 28px;">
+        <a href="/" class="btn-link">Upload another resume</a>
+      </div>
     </div>
 
-    <!-- Footer Start -->
-<footer class="bg-dark text-light py-4 mt-5">
-    <div class="container">
-        <div class="row">
-
-            <!-- Project Info -->
-            <div class="col-md-6 mb-3">
-                <h4 class="fw-bold">AI-Powered Smart Resume Analyzer</h4>
-                <p class="mb-2">
-                    Analyze resumes intelligently, receive personalized job recommendations,
-                    and improve career opportunities using Artificial Intelligence.
-                </p>
-            </div>
-
-            <!-- Technologies -->
-            <div class="col-md-3 mb-3">
-                <h5>Technologies</h5>
-                <p class="mb-1">Python</p>
-                <p class="mb-1">Machine Learning</p>
-                <p class="mb-1">NLP</p>
-                <p class="mb-1">Flask</p>
-            </div>
-
+    <footer>
+      <div class="footer-container">
+        <div class="footer-row">
+          <div class="footer-col info">
+            <h4>AI-Powered Smart Resume Analyzer</h4>
+            <p>
+              Analyze resumes intelligently, receive personalized job recommendations,
+              and improve career opportunities using Artificial Intelligence.
+            </p>
+          </div>
+          <div class="footer-col techs">
+            <h5>Technologies</h5>
+            <ul>
+              <li>Python</li>
+              <li>Machine Learning</li>
+              <li>NLP</li>
+              <li>Flask</li>
+            </ul>
+          </div>
         </div>
 
-        <hr class="border-secondary">
+        <hr>
 
-        <div class="text-center">
-            <p class="mb-1">
-                © 2026 AI-Powered Smart Resume Analyzer and Job Recommendation System.
-                All Rights Reserved.
-            </p>
-            <p class="mb-0">
-                Developed with ❤️ by <strong>Raval Pratik</strong>
-            </p>
+        <div class="footer-bottom">
+          <p>© 2026 AI-Powered Smart Resume Analyzer and Job Recommendation System. All Rights Reserved.</p>
+          <p>Developed with ❤️ by <strong>Raval Pratik</strong></p>
         </div>
-    </div>
-</footer>
-<!-- Footer End -->
-  </body>
+      </div>
+    </footer>
+    </body>
 </html>
