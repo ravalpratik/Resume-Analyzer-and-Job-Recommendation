@@ -147,6 +147,28 @@ button:hover {
 	background: linear-gradient(90deg, var(--accent), #7c3aed);
 }
 
+footer {
+	color: #111827;
+}
+
+footer h4,
+footer h5 {
+	color: #00d4ff;
+}
+
+footer a {
+	transition: 0.3s;
+}
+
+footer a:hover {
+	color: #00d4ff !important;
+	padding-left: 5px;
+}
+
+footer hr {
+	opacity: 0.2;
+}
+
 @media (max-width:640px) {
 	.container {
 		margin: 20px;
